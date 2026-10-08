@@ -156,7 +156,7 @@ export class HandsFreeListener {
 
   async start() {
     this.stream = await navigator.mediaDevices.getUserMedia({
-      // echoCancellation lets the browser subtract NOVA's own reply audio;
+      // echoCancellation lets the browser subtract P2BL's own reply audio;
       // we ALSO pause the VAD while the reply plays, as a second layer.
       audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true },
     })

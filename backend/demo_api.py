@@ -41,7 +41,7 @@ class ChatRequest(BaseModel):
     model: str | None = None
 
 
-app = FastAPI(title="NOVA Groq Demo API")
+app = FastAPI(title="P2BL Groq Demo API")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://127.0.0.1:5173", "http://localhost:5173"],
@@ -94,7 +94,7 @@ async def chat_stream(request: ChatRequest) -> StreamingResponse:
             "model": request.model or GROQ_MODEL,
             "messages": [
                 {"role": "system", "content": (
-                    "You are NOVA, an AI assistant demonstrating a rule-based "
+                    "You are P2BL, an AI assistant demonstrating a rule-based "
                     "multi-agent smart-home research project. Keep answers concise, "
                     "clear, and suitable for explaining to a teacher. Describe only "
                     "the implemented demo: it uses mock sensor data, a Sensing Agent, "

@@ -1,8 +1,8 @@
-"""Smart-room control — bridges NOVA to the ProjectMyRoom API.
+"""Smart-room control — bridges P2BL to the ProjectMyRoom API.
 
 ProjectMyRoom (Express + MongoDB + Socket.IO, ../ProjectMyRoom) manages the
 real room devices: lights, fans, blinds, sensors. Its device state lives in
-the same local MongoDB instance NOVA uses (database `project_my_room`).
+the same local MongoDB instance P2BL uses (database `project_my_room`).
 
 control_device(device, state)  - turn a device on/off by name or type
 list_room_devices()            - what devices exist and their current state

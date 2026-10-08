@@ -5,7 +5,7 @@ import { HandsFreeListener } from '../lib/handsfree.js'
 const HF_LABELS = {
   listening: '🎙️ Hands-free: listening — just start talking',
   capturing: '🔴 Hearing you… pause when you finish the sentence',
-  paused: '⏸ Hands-free paused while NOVA is busy…',
+  paused: '⏸ Hands-free paused while P2BL is busy…',
 }
 
 const SUGGESTIONS = [
@@ -37,7 +37,7 @@ export default function ChatBox({
   const [promptHistory, setPromptHistory] = useState(() => {
     try {
       return JSON.parse(
-        localStorage.getItem('nova-prompt-history') ||
+        localStorage.getItem('p2bl-prompt-history') ||
           localStorage.getItem('jarvis-prompt-history') || // pre-rename key
           '[]'
       )
@@ -52,7 +52,7 @@ export default function ChatBox({
     setPromptHistory((prev) => {
       if (prev[prev.length - 1] === text) return prev // skip consecutive repeats
       const next = [...prev, text].slice(-50)
-      localStorage.setItem('nova-prompt-history', JSON.stringify(next))
+      localStorage.setItem('p2bl-prompt-history', JSON.stringify(next))
       return next
     })
   }
@@ -163,7 +163,7 @@ export default function ChatBox({
   }, [handsFree])
 
   // Don't listen while a request is in flight or the reply is playing —
-  // otherwise NOVA hears its own voice and answers itself in a loop.
+  // otherwise P2BL hears its own voice and answers itself in a loop.
   useEffect(() => {
     listenerRef.current?.setPaused(loading || speaking)
   }, [loading, speaking])

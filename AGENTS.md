@@ -2,22 +2,22 @@
 
 ## Project Structure & Module Organization
 
-This workspace contains two independent Git repositories. Run Git commands inside the component you change.
+This repository contains frontend and backend components. Run Git commands from the repository root.
 
-- `NOVA-frontend/`: React 18 and Vite chat UI. `src/App.jsx` coordinates API calls and state; `src/components/` contains UI components; `src/lib/handsfree.js` handles voice detection and WAV encoding. Styling lives in `src/styles.css`.
-- `NOVA-backend/`: FastAPI service. `app/main.py` defines endpoints; `app/models/` defines schemas; `app/agent/` owns orchestration and tool registration; `app/tools/`, `app/services/`, and `app/db/` isolate integrations and persistence.
+- `frontend/`: React 18 and Vite chat UI. `src/App.jsx` coordinates API calls and state; `src/components/` contains UI components; `src/lib/handsfree.js` handles voice detection and WAV encoding. Styling lives in `src/styles.css`.
+- `backend/`: FastAPI service. `app/main.py` defines endpoints; `app/models/` defines schemas; `app/agent/` owns orchestration and tool registration; `app/tools/`, `app/services/`, and `app/db/` isolate integrations and persistence.
 - Backend voice assets belong in ignored `voices/`; vector data belongs in ignored `chroma_data/`.
 
 ## Build, Test, and Development Commands
 
-From `NOVA-frontend/`:
+From `frontend/`:
 
 - `npm install`: install dependencies.
 - `npm run dev`: start Vite at `http://localhost:5173`.
 - `npm run build`: produce production output in `dist/`.
 - `npm run preview`: preview the production build.
 
-From `NOVA-backend/`, use Python 3.11+ and a virtual environment:
+From `backend/`, use Python 3.11+ and a virtual environment:
 
 - `pip install -r requirements.txt`: install backend dependencies.
 - `playwright install chromium`: install the browser used by tools.

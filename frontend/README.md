@@ -1,6 +1,6 @@
-# NOVA — frontend
+# P2BL — frontend
 
-The chat UI of **NOVA**, a fully local AI agent. React + Vite, styled like a
+The chat UI of **P2BL**, a fully local AI agent. React + Vite, styled like a
 modern assistant (ChatGPT-style layout) with a persistent sidebar, live
 streaming, and full voice support.
 
@@ -20,7 +20,7 @@ streaming, and full voice support.
 
 ## Quick start
 
-Requires the [NOVA backend](https://github.com/ReeganKumaran/NOVA-backend)
+Requires the [P2BL backend](../backend)
 running on port 8000.
 
 ```bash

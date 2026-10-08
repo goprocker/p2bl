@@ -12,7 +12,7 @@ export default function App() {
     {
       role: 'assistant',
       content:
-        "Hi, I'm NOVA — your rule-based smart-home assistant. Ask how the home handles lighting, energy saving, appliance control, comfort, or safety.",
+        "Hi, I'm P2BL — your rule-based smart-home assistant. Ask how the home handles lighting, energy saving, appliance control, comfort, or safety.",
     },
   ])
   const [conversationId, setConversationId] = useState(null)
@@ -24,7 +24,7 @@ export default function App() {
   const [models, setModels] = useState([])
   const [model, setModel] = useState(
     // read the pre-rename key too so the saved choice survives
-    localStorage.getItem('nova-model') || localStorage.getItem('jarvis-model') || ''
+    localStorage.getItem('p2bl-model') || localStorage.getItem('jarvis-model') || ''
   )
   const audioRef = useRef(null)
   const abortRef = useRef(null) // AbortController of the in-flight request
@@ -279,7 +279,7 @@ export default function App() {
 
   function chooseModel(name) {
     setModel(name)
-    localStorage.setItem('nova-model', name)
+    localStorage.setItem('p2bl-model', name)
     // Client-side note only — not sent to the backend or saved in Mongo
     setMessages((prev) => [...prev, { role: 'system', content: `Model switched to ${name}` }])
   }
@@ -342,7 +342,7 @@ export default function App() {
   return (
     <div className="app">
       <aside className="sidebar">
-        <div className="sidebar-brand">NOVA</div>
+        <div className="sidebar-brand">P2BL</div>
         <div className="mode-switch">
           <button className={view === 'automation' ? 'active' : ''}
             onClick={() => setView('automation')}>Automation Lab</button>

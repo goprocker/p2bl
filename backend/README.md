@@ -1,10 +1,11 @@
-# NOVA — backend
+# P2BL — backend
 
-The backend of **NOVA**, a fully local AI agent (not just a chatbot): it
+The backend of **P2BL**, a fully local AI agent (not just a chatbot): it
 decides when to use tools, fetches live data with a headless browser and
 APIs, stores long-term memory in MongoDB, recalls it semantically with
 vector search, and talks — speech-to-text and text-to-speech — all powered
-by local models through Ollama. Nothing leaves your machines.
+by local models through Ollama. Optional Groq chat and web/weather tools
+send requests to external services; see the [root README](../README.md).
 
 ```
 User message / voice
@@ -45,10 +46,10 @@ playwright install chromium
 cp .env.example .env          # defaults work out of the box
 
 # MongoDB
-docker run -d --name nova-mongo -p 27017:27017 -v nova_mongo:/data/db mongo:7
+docker run -d --name p2bl-mongo -p 27017:27017 -v p2bl_mongo:/data/db mongo:7
 
 # Models
-ollama pull qwen2.5:7b        # or any tool-calling model — set OLLAMA_MODEL
+ollama pull qwen3            # or any tool-calling model — set OLLAMA_MODEL
 ollama pull nomic-embed-text  # embeddings for vector memory
 
 # Piper voice (TTS) — or set TTS_ENGINE=say on macOS to skip
@@ -107,4 +108,4 @@ handles timeouts and failures for you.
 ---
 
 Frontend (React chat UI with streaming, voice and hands-free mode) lives in
-the companion repo. Built by [Reegan](https://reeganlabs.com).
+[frontend directory](../frontend). Built by [Reegan](https://reeganlabs.com).
