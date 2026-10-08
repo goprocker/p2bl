@@ -1,0 +1,14 @@
+# Local configuration and generated runtime data
+**/.env
+**/*.log
+**/__pycache__/
+**/*.py[cod]
+**/node_modules/
+**/dist/
+**/chroma_data/
+**/voices/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/

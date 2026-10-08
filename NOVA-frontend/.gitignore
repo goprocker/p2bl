@@ -1,0 +1,15 @@
+# Dependencies & build output
+node_modules/
+dist/
+
+# Local env overrides (VITE_API_URL etc.)
+.env
+.env.local
+
+# Stray test assets
+*.wav
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/

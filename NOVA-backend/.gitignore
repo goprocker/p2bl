@@ -1,0 +1,19 @@
+# Environment — contains private hosts and any API keys
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local data — personal memories and vector index
+chroma_data/
+
+# Voice models (60MB+ — see README for download instructions)
+voices/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
